@@ -17,6 +17,12 @@ try:
 except ImportError:
     raise SystemExit("Run: pip install mediapipe opencv-python numpy")
 
+
+from pathlib import Path
+
+# Get project root (one folder above src)
+ROOT = Path(__file__).resolve().parent.parent
+
 # ---------------- CONFIG ----------------
 BASE_DIR = "dataset"                 # ✅ match your research repo structure
 RAW_DIR = os.path.join(BASE_DIR, "raw")

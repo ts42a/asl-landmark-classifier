@@ -23,6 +23,9 @@ import joblib
 from utils_dataset import DatasetConfig, load_xy
 
 
+from pathlib import Path                          # Get project root (one folder above src)
+ROOT = Path(__file__).resolve().parent.parent
+
 def build_model(model_name: str):
     model_name = model_name.lower().strip()
 
