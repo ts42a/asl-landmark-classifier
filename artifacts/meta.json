@@ -1,0 +1,23 @@
+{
+  "model": "svm",
+  "read_folder": "raw",
+  "feature_mode": "raw",
+  "add_angles": false,
+  "labels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "best_params": {
+    "clf__C": 1,
+    "clf__gamma": "scale",
+    "clf__kernel": "rbf"
+  },
+  "test_accuracy": 1.0,
+  "n_samples": 458,
+  "n_features": 63,
+  "seed": 42,
+  "test_size": 0.2
+}

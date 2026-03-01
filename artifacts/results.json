@@ -1,0 +1,117 @@
+{
+  "read_folder": "raw",
+  "add_angles": false,
+  "seed": 42,
+  "test_size": 0.2,
+  "runs": {
+    "raw": {
+      "knn": {
+        "best_params": {
+          "clf__n_neighbors": 3,
+          "clf__weights": "uniform"
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "n_features": 63,
+        "n_samples": 458
+      },
+      "svm": {
+        "best_params": {
+          "clf__C": 1,
+          "clf__gamma": "scale",
+          "clf__kernel": "rbf"
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "n_features": 63,
+        "n_samples": 458
+      },
+      "rf": {
+        "best_params": {
+          "max_depth": null,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "n_features": 63,
+        "n_samples": 458
+      }
+    },
+    "normalized": {
+      "knn": {
+        "best_params": {
+          "clf__n_neighbors": 3,
+          "clf__weights": "uniform"
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "n_features": 63,
+        "n_samples": 458
+      },
+      "svm": {
+        "best_params": {
+          "clf__C": 1,
+          "clf__gamma": "scale",
+          "clf__kernel": "rbf"
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "n_features": 63,
+        "n_samples": 458
+      },
+      "rf": {
+        "best_params": {
+          "max_depth": null,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "n_features": 63,
+        "n_samples": 458
+      }
+    },
+    "scaled": {
+      "knn": {
+        "best_params": {
+          "clf__n_neighbors": 3,
+          "clf__weights": "uniform"
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "n_features": 63,
+        "n_samples": 458
+      },
+      "svm": {
+        "best_params": {
+          "clf__C": 1,
+          "clf__gamma": "scale",
+          "clf__kernel": "rbf"
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "n_features": 63,
+        "n_samples": 458
+      },
+      "rf": {
+        "best_params": {
+          "max_depth": null,
+          "min_samples_split": 2,
+          "n_estimators": 200
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "n_features": 63,
+        "n_samples": 458
+      }
+    }
+  },
+  "labels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ]
+}
