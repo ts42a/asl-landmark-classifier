@@ -23,8 +23,14 @@ import joblib
 from utils_dataset import DatasetConfig, load_xy
 
 
-from pathlib import Path                          # Get project root (one folder above src)
+import argparse
+from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
+ap = argparse.ArgumentParser()
+
+ap.add_argument("--dataset_root", default=str(ROOT / "dataset"), help="dataset root folder")
+ap.add_argument("--out_dir", default=str(ROOT / "artifacts"), help="output directory")
+
 
 def build_model(model_name: str):
     model_name = model_name.lower().strip()

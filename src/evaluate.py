@@ -16,10 +16,13 @@ from sklearn.metrics import classification_report, accuracy_score
 
 from utils_dataset import DatasetConfig, load_xy
 
+import argparse
 from pathlib import Path
-
-# Get project root (one folder above src)
 ROOT = Path(__file__).resolve().parent.parent
+ap = argparse.ArgumentParser()
+
+ap.add_argument("--dataset_root", default=str(ROOT / "dataset"))
+ap.add_argument("--out_dir", default=str(ROOT / "artifacts"))
 
 def main():
     ap = argparse.ArgumentParser()

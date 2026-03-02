@@ -19,23 +19,24 @@ except ImportError:
 
 
 from pathlib import Path
-
-# Get project root (one folder above src)
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent  # project root
 
 # ---------------- CONFIG ----------------
-BASE_DIR = "dataset"                 # ✅ match your research repo structure
-RAW_DIR = os.path.join(BASE_DIR, "raw")
-META_FILE = os.path.join(BASE_DIR, "metadata.jsonl")
+BASE_DIR = ROOT / "dataset"
+RAW_DIR = BASE_DIR / "raw"
+META_FILE = BASE_DIR / "metadata.jsonl"
 
-MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
+MODEL_DIR = ROOT / "models"  # store mediapipe model once at repo root
 MODEL_URL = "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task"
 
 COUNTDOWN_SECONDS = 3
-STATIC_CAPTURE_SECONDS = 3.0         # ✅ required by you
+STATIC_CAPTURE_SECONDS = 3.0
 STABLE_VAR_THRESHOLD = 1e-4
-STABILITY_WINDOW = 6                 # rolling window for stability
+STABILITY_WINDOW = 6
 MIN_STABLE_FRAMES = 8
+
+RAW_DIR.mkdir(parents=True, exist_ok=True)
+MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
 # Default: research = keep many
 DEFAULT_SAVE_MODE = "all"            # "all" or "best3"
@@ -46,12 +47,12 @@ os.makedirs(MODEL_DIR, exist_ok=True)
 
 # ---------- Helpers ----------
 def get_hand_model_path():
-    path = os.path.join(MODEL_DIR, "hand_landmarker.task")
-    if not os.path.exists(path):
+    path = MODEL_DIR / "hand_landmarker.task"
+    if not path.exists():
         print("Downloading MediaPipe hand_landmarker model...")
-        urllib.request.urlretrieve(MODEL_URL, path)
+        urllib.request.urlretrieve(MODEL_URL, str(path))
         print("Done.")
-    return path
+    return str(path)
 
 
 def sanitize_label(name: str) -> str:
